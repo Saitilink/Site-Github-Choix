@@ -15,52 +15,26 @@ document.querySelectorAll('.cliquable').forEach(div => {
     })
 })
 
-function sendEmail() {
-    const data = {
-        name: "Thomas",
-        email: "menu.thomas1@gmail.com",
-        message: "testedigdiygegid"
-    };
+emailjs.init("votre_clé_publique");
 
-    fetch('/send-email', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)
-    })
-    .then(response => response.text())
-    .then(result => {
-        console.log(result);
-    })
-    .catch(error => {
-        console.error('Error:', error);
-    });
-}
+const serviceID = 'service_1z3jtct'
+const templateID = 'template_mq5fx6a'
+
+
 
 
 function afficher() {
- console.log('idhuefo')   
- console.log(JSON.parse(localStorage.getItem('cliqueListe')));
- const data = {
-    name: "Thomas",
-    email: "menu.thomas1@gmail.com",
-    message: "testedigdiygegid"
-};
-
-fetch('/send-email', {
-    method: 'POST',
-    headers: {
-        'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(data)
+    console.log('idhuefo')   
+    console.log(JSON.parse(localStorage.getItem('cliqueListe')));
+    emailjs.send(serviceID, templateID, {
+        user_name:"Thomas",
+        message: liste
 })
-.then(response => response.text())
-.then(result => {
-    console.log(result);
-})
-.catch(error => {
-    console.error('Error:', error);
+.then(function(response) {
+    console.log('SUCCESS!', response.status, response.text);
+}, function(error) {
+    console.log('FAILED...', error);
 });
+    liste = []
 }
     
