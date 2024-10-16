@@ -1,0 +1,74 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    position: relative; /* Nécessaire pour positionner l'image en pseudo-élément */
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('image/wallpapercute.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.2; /* Change l'opacité ici */
+    z-index: -1; /* Place l'image derrière le contenu de la page */
+}
+
+
+.container {
+    text-align: center; /* Pour centrer le texte et les éléments dans le conteneur */
+    padding: 40px;
+    display: flex;
+    flex-direction: column; /* Change la direction en colonne */
+    align-items: center;
+    
+}
+img {    
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    outline: 0px solid purple;
+    transition: outline 0.3s ease;
+    box-sizing: border-box;
+}
+
+img:hover {
+    outline: 10px solid #a910c8;
+}
+
+p,h2 {
+    font-family: Inter,Helvetica,"Apple Color Emoji","Segoe UI Emoji",NotoColorEmoji,"Noto Color Emoji","Segoe UI Symbol","Android Emoji",EmojiSymbols,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans",sans-serif;
+
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    height: 20vh;
+    justify-content: center; /* Centre les boutons horizontalement */
+    gap: 20px; /* Ajoute un espacement entre les boutons */
+    margin-bottom: 20px; /* Espacement entre les boutons et le texte */
+}
+
+button,select {
+    background-color: #5B42F3;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover,select:hover {
+    background-color: #AF40FF; /* Changer la couleur du bouton au survol */
+    
+}
