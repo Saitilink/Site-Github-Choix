@@ -9,7 +9,7 @@
 <body>
     <div class=container>
     <label>Choisi une heure de début de kidnapping</label>
-    <select name="heure début" id="begining">
+    <select id="begining">
         <option value="1">18:00</option>
         <option value="2">18:30</option>
         <option value="3">19:00</option>
@@ -26,7 +26,7 @@
     </select>
     <p></p>
     <label>Choisi une heure de fin de kidnapping</label>
-    <select name="heure début" id="begining">
+    <select id="end">
         <option value="2">18:30</option>
         <option value="3">19:00</option>
         <option value="4">19:00</option>
@@ -43,8 +43,10 @@
 
     </select>
     <p><a href="What-you-want-to-do.html">
-    <button>CLIQUE</button></a>
+    <button onclick="ajoutHeure()">CLIQUE</button></a>
     </p>
+
 </div>
+<script src="scrpit.js"></script>   
 </body>
 </html>
