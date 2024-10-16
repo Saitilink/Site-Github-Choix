@@ -15,7 +15,7 @@ document.querySelectorAll('.cliquable').forEach(div => {
     })
 })
 
-emailjs.init("votre_clé_publique");
+emailjs.init("xk4qPaDVln9ySWPAM");
 
 const serviceID = 'service_1z3jtct'
 const templateID = 'template_mq5fx6a'
