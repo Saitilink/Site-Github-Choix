@@ -15,8 +15,33 @@ document.querySelectorAll('.cliquable').forEach(div => {
     })
 })
 
+
+
+
 function afficher() {   
     console.log(JSON.parse(localStorage.getItem('cliqueListe')));
+    
+    let text = "";
+    for (let k = 0; k < liste.length; k++) {
+        text += liste[k] + " ";
+    }
+    const blob = new Blob([text], { type: 'text/plain' });
+
+    // Créer une URL pour ce Blob
+    const url = URL.createObjectURL(blob);
+
+    // Créer un lien temporaire pour télécharger le fichier
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'Resultat.chr';  // Nom du fichier à télécharger
+    document.body.appendChild(a);
+    a.click();  // Simuler le clic pour télécharger
+    document.body.removeChild(a);  // Supprimer le lien temporaire
+
+    // Libérer la mémoire allouée pour l'URL Blob
+    URL.revokeObjectURL(url);
+    liste =[];
+    localStorage.setItem('cliqueListe', JSON.stringify(liste))
     
 }
     
